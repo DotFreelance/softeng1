@@ -39,18 +39,4 @@ public class TaskListActivity extends AppCompatActivity
         creator.listManager.getAdapter().setAddMode();
         creator.listManager.addTask(v.getContext(), "");
     }
-
-    public void onCheckClick(View v){
-        ViewParent parentView = v.getParent();
-        ListView listView = (ListView) findViewById(R.id.listView);
-        int posn = -1;
-
-        if(parentView instanceof View) {
-            posn = listView.getPositionForView((View) parentView);
-        }
-
-        if(posn != -1) {
-            creator.listManager.checkTask(posn);
-        }
-    }
 }

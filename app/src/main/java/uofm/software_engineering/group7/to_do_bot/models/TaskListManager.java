@@ -131,17 +131,7 @@ public class TaskListManager {
     }
 
     public void checkTask(int index){
+        //TODO: Do we need this!?
 
-        SQLiteDatabase db = taskListDB.getWritableDatabase();
-        ContentValues dbValues = new ContentValues();
-        TaskListItem item = list.get(index);
-        // Set the values we need for this entry
-        dbValues.put(TaskListContract.TaskListItemSchema.COL_NAME_CHECKED, TaskListContract.TaskListItemSchema.CHECKED_TRUE);
-        // Perform the database insert, returning the _ID primary key value
-
-        db.update(TaskListContract.TABLE_NAME, dbValues, TaskListContract.TaskListItemSchema._ID + "=?", new String[]{ Long.toString(item.getId()) });
-
-        adapter.notifyDataSetChanged();
-        db.close();
     }
 }
