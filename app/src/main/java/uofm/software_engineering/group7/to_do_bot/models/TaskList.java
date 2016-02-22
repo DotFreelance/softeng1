@@ -11,11 +11,12 @@ package uofm.software_engineering.group7.to_do_bot.models;
  */
 
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 import uofm.software_engineering.group7.to_do_bot.models.ListItem;
 
 
-class TaskList extends HashMap<Integer, ListItem> {
+class TaskList extends ArrayList<ListItem> {
 
 }

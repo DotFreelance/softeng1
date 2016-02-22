@@ -9,10 +9,13 @@ import uofm.software_engineering.group7.to_do_bot.models.ListItem;
  */
 public class TaskListItem implements ListItem {
     private String value;
-    private boolean checked = false;
+    private int id;
+    private boolean checked;
 
-    public TaskListItem(String newValue) {
+    public TaskListItem(int newId, String newValue) {
         value = newValue;
+        id = newId;
+        checked = false;
     }
 
     public void editValue(String newValue) {
@@ -28,7 +31,10 @@ public class TaskListItem implements ListItem {
     }
 
     public void check() {
-        checked = true;
+        checked = !checked;
     }
 
+    public int getId(){
+        return id;
+    }
 }

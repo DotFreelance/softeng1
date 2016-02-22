@@ -1,7 +1,7 @@
 package uofm.software_engineering.group7.to_do_bot.models;
 
 
-/**
+/*
  * Created by Faye on 1/22/2016.
  */
 
@@ -13,6 +13,7 @@ public class TaskListManager {
     public TaskListManager(String newName) {
         category = newName;
         counter = 0;
+        list = new TaskList();
     }
 
     public void editCategoryName(String newName) {
@@ -22,11 +23,17 @@ public class TaskListManager {
     public void addTask(String value) {
         counter ++;
 
-        ListItem item = new TaskListItem(value);
-        list.put(counter, item);
+        ListItem item = new TaskListItem(counter, value);
+        list.add(counter, item);
     }
 
     public void removeTask(String id) {
         list.remove(id);
+    }
+
+    public void checkTask(String id) {
+        int currId = Integer.parseInt(id);
+        TaskListItem temp = (TaskListItem) list.get(currId);
+        temp.check();
     }
 }
