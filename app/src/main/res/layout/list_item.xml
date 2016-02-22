@@ -5,13 +5,14 @@
     android:layout_height="match_parent">
 
 
+
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:enabled="true"
-        android:focusableInTouchMode="false"
-        android:onClick="onClick"/>
+        android:id="@+id/itemChecked"
+        android:theme="@style/AppTheme"
+        android:onClick="onCheckClick" />
 
     <EditText
         android:layout_width="match_parent"
@@ -19,7 +20,10 @@
         android:id="@+id/list_item_String"
         android:textSize="17sp"
         android:layout_weight="10"
-        android:autoText="true"/>
+        android:inputType="text"
+        android:theme="@style/AppTheme"
+        android:imeOptions="actionDone"
+        android:selectAllOnFocus="true" />
 
     <ImageButton
         android:layout_width="25dp"
@@ -27,11 +31,11 @@
         android:id="@+id/deleteButton"
         android:src="@mipmap/delete"
         android:layout_weight="1"
-        android:layout_centerHorizontal="true"
         android:background="#00000000"
         android:scaleType="fitXY"
-        android:layout_gravity="center|right"
-        android:onClick="onClick"/>
+        android:layout_gravity="top|center|end"
+        android:layout_marginTop="5dp"
+        android:contentDescription="@string/delete_button_description" />
 
 
 </LinearLayout>
