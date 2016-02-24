@@ -14,7 +14,6 @@ import uofm.software_engineering.group7.to_do_bot.services.TaskListDBHelper;
 public class TaskListItem implements ListItem {
     // References to containing objects required for category and DB integration
     private TaskListDBHelper taskListDB;
-    private TaskListManager taskListManager;
 
     // User values for this TaskListItem
     private long id;
@@ -30,7 +29,6 @@ public class TaskListItem implements ListItem {
                         boolean isChecked,
                         String alarmTime) {
         // Set the reference values
-        taskListManager = listManager;
         taskListDB = dbHelper;
         // Set the user values
         this.id = itemID;
@@ -51,10 +49,6 @@ public class TaskListItem implements ListItem {
 
     public boolean getChecked(){
         return checked;
-    }
-
-    public String getCategory(){
-        return taskListManager.getCategory();
     }
 
     // Setters
